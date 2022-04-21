@@ -1,0 +1,114 @@
+.root {
+  font-size: 25px;
+  font-weight: 500;
+  width: 90%;
+  height: 100px;
+  line-height: 100px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.middle {
+  width: 100%;
+  color: #ffffff;
+  .form {
+    position: relative;
+    bottom: 500px;
+    float: right;
+    margin-right: 200px;
+    width: 20%;
+    text-align: center;
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    height: 400px;
+    .textField {
+      width: 60%;
+      background-color: white;
+    }
+  }
+  .buttongroup{
+    width: 70%;
+    background-color: #ffffff;
+    .button{
+      width: 100%;
+      color: #000;
+    }
+  }
+  
+}
+
+@media screen and (max-width: 1600px) {
+  .root {
+    margin: 0 auto;
+  }
+  .middle {
+    width: 100%;
+  }
+  .middle .form {
+    position: relative;
+    bottom: 450px;
+    float: right;
+    margin-right: 200px;
+    width: 20%;
+    text-align: center;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .root {
+    margin: 0 auto;
+  }
+  .middle {
+    width: 100%;
+  }
+  .middle .form {
+    position: relative;
+    bottom: 400px;
+    float: right;
+    margin-right: 200px;
+    width: 20%;
+    text-align: center;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .root {
+    margin: 0 auto;
+  }
+  .middle {
+    width: 100%;
+  }
+  .middle .form {
+    position: relative;
+    top: 0;
+    width: 25%;
+    text-align: center;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .root {
+    margin: 0 auto;
+  }
+  .middle {
+    width: 100%;
+    .form {
+      max-width: 100%;
+      background-color: rgba($color: #ffffff, $alpha: 0.5);
+      .textField {
+        width: 200%;
+      }
+      .buttongroup{
+        width: 100%;
+        background-color: #ffffff;
+        .button{
+          width: 100%;
+          color: #000;
+        }
+      }
+    }
+  }
+}

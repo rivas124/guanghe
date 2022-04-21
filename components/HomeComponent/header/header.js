@@ -14,6 +14,7 @@ import styles from './header.module.scss'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Link from 'next/link'
+import DnsIcon from '@mui/icons-material/Dns';
 
 export default function Header() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -31,14 +32,14 @@ export default function Header() {
                     height={50}
                     className={styles.compony_logo}
                 />
-                <Box className={styles.usermanagement}>
+                {/* <Box className={styles.usermanagement}>
                     <PersonIcon className='profile-icon' sx={{ fontSize: 30 }} 
                        style={{ color: indigo[50] }}
                     />
                     <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={styles.dropdownbutton} color='inherit'>
                         <ArrowDropDownIcon sx={{ fontSize: 25 }} />
                     </Button>
-                </Box>
+                </Box> */}
                 <Menu
                     anchorEl={anchorEl}
                     keepMounted
@@ -49,20 +50,21 @@ export default function Header() {
                     <MenuItem onClick={handleClose}>My account</MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
                 </Menu>
-                <a href=''>homepage</a>
-                <a href=''>product</a>
-                <a href=''>service</a>
-                <Link href="memberPage/memberPage">
-                <a href=''>team</a>
-                </Link>
-                <a href=''>about</a>
+                    <a href=''>homepage</a>
+                    <a href=''>product</a>
+                    <a href=''>service</a>
+                    <Link href="memberPage/memberPage">
+                        <a href=''>team</a>
+                    </Link>
+                    <a href=''>about</a>
+                    <DnsIcon className={styles.dsnicon} />
             </Box>
             <Box className={styles.ArrowDropDownIconcarouselbox}>
                 <Carousel autoPlay infiniteLoop>
-                    <Image src={flashviewone}/>
-                    <Image src={flashviewtwo}/>
-                </Carousel> 
-                </Box>
+                    <Image src={flashviewone} />
+                    <Image src={flashviewtwo} />
+                </Carousel>
+            </Box>
         </Box>
     )
 }
