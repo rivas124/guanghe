@@ -1,0 +1,23 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>GuangHe</title>
+      <link>undefined/blog</link>
+      <language>en-us</language>
+      <managingEditor>address@yoursite.com (mark)</managingEditor>
+      <webMaster>address@yoursite.com (mark)</webMaster>
+      <lastBuildDate>Sun, 02 May 2021 00:00:00 GMT</lastBuildDate>
+      <atom:link href="undefined/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>undefined/blog/nested-route/introducing-multi-part-posts-with-nested-routing</guid>
+    <title>demo1</title>
+    <link>undefined/blog/nested-route/introducing-multi-part-posts-with-nested-routing</link>
+    <description>This is demo</description>
+    <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+    <author>address@yoursite.com (mark)</author>
+    <category>multi-author</category><category>feature</category>
+  </item>
+
+    </channel>
+  </rss>
