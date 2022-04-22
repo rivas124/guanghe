@@ -1,0 +1,10 @@
+{
+    "type": "Person",
+    "firstName": "XingHua",
+    "lastName": "Guan",
+    "bio": "With over 10 years in both public and private sectors, Johnna has experience in management consultation, team building, professional development, strategic implementation, and company collaboration.",
+    "image": {
+        "url": "/images/c2.jpg",
+        "altText": "Person photo"
+    }
+}
