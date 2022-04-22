@@ -21,20 +21,33 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 export default function Slider() {
   return (
     <Box>
-      <OwlCarousel loop touchDrag>
-        <Box>
+      <OwlCarousel autoplay='true' autoplayTimeout='3000' loop='true'>
+        <Box className={styles.root}>
           <Box className={styles.item}>
             <Image src={imageOne} width='500px' height='400px' />
           </Box>
+          <Box className={styles.box}>
+            <a href=''>staff A</a>
+            <p>A dedicated employee</p>
+          </Box>
         </Box>
-        <Box className={styles.item}>
-          <Image src={imageThree} width='500px' height='400px' />
+        <Box className={styles.root}>
+          <Box className={styles.item}>
+            <Image src={imageThree} width='500px' height='400px' />
+          </Box>
+          <Box className={styles.box}>
+            <a href=''>staff B</a>
+            <p>A dedicated employee</p>
+          </Box>
         </Box>
-        <Box className={styles.item}>
-          <Image src={imageOne} width='500px' height='400px' />
-        </Box>
-        <Box className={styles.item}>
-          <Image src={imageThree} width='500px' height='400px' />
+        <Box className={styles.root}>
+          <Box className={styles.item}>
+            <Image src={imageOne} width='500px' height='400px' />
+          </Box>
+          <Box className={styles.box}>
+            <a href=''>staff C</a>
+            <p>A dedicated employee</p>
+          </Box>
         </Box>
       </OwlCarousel>
     </Box>

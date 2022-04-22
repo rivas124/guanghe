@@ -15,6 +15,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Link from 'next/link'
 import DnsIcon from '@mui/icons-material/Dns';
+import { useRouter } from 'next/router';
 
 export default function Header() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,6 +25,10 @@ export default function Header() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const router = useRouter();
+    const logout = () =>{
+        router.push('/')
+    }
     return (
         <Box className='header' maxWidth='100%'>
             <Box className={styles.header_navigation}>
@@ -32,14 +37,14 @@ export default function Header() {
                     height={50}
                     className={styles.compony_logo}
                 />
-                {/* <Box className={styles.usermanagement}>
+                <Box className={styles.usermanagement}>
                     <PersonIcon className='profile-icon' sx={{ fontSize: 30 }} 
                        style={{ color: indigo[50] }}
                     />
                     <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={styles.dropdownbutton} color='inherit'>
                         <ArrowDropDownIcon sx={{ fontSize: 25 }} />
                     </Button>
-                </Box> */}
+                </Box>
                 <Menu
                     anchorEl={anchorEl}
                     keepMounted
@@ -48,7 +53,7 @@ export default function Header() {
                 >
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                     <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={logout}>Logout</MenuItem>
                 </Menu>
                     <a href=''>homepage</a>
                     <a href=''>product</a>

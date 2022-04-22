@@ -1,0 +1,19 @@
+.root{
+    width: 30%;
+    position: absolute;
+    margin-left: 35%;
+    .footerleft{
+        text-align: center;
+        font-size: 15px;
+        color: #888;
+        width: 50%;
+    }
+    .footerright{
+        float: right;
+        width: 50%;
+        text-align: left;
+        color: #888;
+        position: relative;
+        bottom: 40px;
+    }
+}
