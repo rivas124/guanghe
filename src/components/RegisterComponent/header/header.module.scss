@@ -8,7 +8,7 @@
     font-size: 20px;
     color: #000;
     margin-left: 100px;
-    margin-top: 20px;
+    margin-top: 0;
     .buttongroup{
         float: right;
         margin-top: 10px;
@@ -22,5 +22,55 @@
         width: 30%;
         height: 50px;
         margin-left: 20%;
+        font-size: 1.5rem;
+    }
+    .movetitle{
+        display: none;
+    }
+}
+
+@media screen and (max-width:1215px) {
+    .root{
+        .buttongroup{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .root{
+        margin-left: 50px;
+        .buttongroup{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:905px) {
+    .root{
+        margin-left: 0px;
+        .buttongroup{
+            display: none;
+        }
+        .title{
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width:685px) {
+    .root{
+        margin-left: 0px;
+        .buttongroup{
+            display: none;
+        }
+        .title{
+            font-size: 15px;
+            display: none;
+        }
+        .movetitle{
+            display: block;
+            text-align: center;
+        }
     }
 }

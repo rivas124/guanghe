@@ -8,8 +8,7 @@ export default function Footer() {
     return (
         <Box className={styles.root}>
             <Box className={styles.footerleft}>
-                <p style={{ textAlign: 'right', marginTop: 20 }}>沈阳广合科技发展有限公司<br />
-                    版权所有  ©2022</p>
+                <p>沈阳广合科技发展有限公司版权所有  ©2022</p>
             </Box>
             <Box className={styles.footerright}>
                 <ButtonGroup variant="text" aria-label="text button group" className={styles.buttongroup} color='inherit'>

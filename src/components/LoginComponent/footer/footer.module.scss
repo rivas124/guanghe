@@ -2,7 +2,7 @@
     width: 100%;
     text-align: center;
     margin-top: 100px;
-    position: fixed;
+    position: absolute;
     bottom: 50px;
     .buttongroup{
         margin-bottom: 20px;
@@ -12,4 +12,26 @@
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         color: #888;
     }
+}
+
+@media screen and (max-width:1320px) {
+    .root{
+        position: relative;
+        top: 800px;
+    }
+    
+}
+@media screen and (max-width:1050px) {
+    .root{
+        position: relative;
+        top:650px;
+    }
+    
+}
+@media screen and (max-width:650px) {
+    .root{
+        position: relative;
+        top:500px;
+    }
+    
 }

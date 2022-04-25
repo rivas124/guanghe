@@ -5,12 +5,12 @@
         "headerVariant": "variant-c",
         "primaryColors": "colors-a",
         "secondaryColors": "colors-f",
-        "title": "GuangHe",
+        "title": "沈阳广合科技发展有限公司",
         "isTitleVisible": true,
         "primaryLinks": [
             {
                 "type": "Link",
-                "label": "Home",
+                "label": "主页",
                 "url": "/",
                 "altText": ""
             },
@@ -22,17 +22,17 @@
                 "icon": "arrowRight",
                 "iconPosition": "right",
                 "elementId": "",
-                "label": "member"
+                "label": "成员"
             },
             {
                 "type": "Link",
-                "label": "Blog",
+                "label": "日志",
                 "altText": "Blog",
                 "url": "/blog"
             },
             {
                 "type": "Link",
-                "label": "About",
+                "label": "关于",
                 "url": "/faq",
                 "altText": ""
             }
@@ -40,7 +40,7 @@
         "secondaryLinks": [
             {
                 "type": "Button",
-                "label": "Sign up",
+                "label": "登陆",
                 "url": "/login",
                 "altText": "Sign up",
                 "style": "primary"
@@ -71,7 +71,7 @@
         }
     },
     "footer": {
-        "colors": "colors-h",
+        "colors": "colors-a",
         "logo": {
             "altText": "altText of the image",
             "caption": "Caption of the image",
@@ -84,39 +84,39 @@
             "type": "ImageBlock",
             "url": "/images/logo.png"
         },
-        "title": "GuangHe",
+        "title": "沈阳广合科技发展有限公司",
         "contacts": {
             "title": "Contact details",
             "phoneNumber": "850-123-1234",
             "phoneAltText": "Our phone",
             "email": "info@lorem.mail",
             "emailAltText": "Our email",
-            "address": "312 Lovely Street, NY",
+            "address": "沈阳",
             "addressAltText": "Our address"
         },
-        "copyrightText": "Powered by [Stackbit](https://www.stackbit.com/)",
+        "copyrightText": "技术支持 [百度](https://www.baidu.com/)",
         "primaryLinks": [
             {
                 "type": "Link",
-                "label": "Home",
+                "label": "主页",
                 "url": "/",
                 "altText": ""
             },
             {
                 "type": "Link",
-                "label": "Careers",
-                "url": "/careers",
+                "label": "职业",
+                "url": "/",
                 "altText": ""
             },
             {
                 "type": "Link",
-                "label": "FAQ",
-                "url": "/faq",
+                "label": "常见问题",
+                "url": "/",
                 "altText": ""
             },
             {
                 "type": "Link",
-                "label": "Blog",
+                "label": "日志",
                 "url": "/blog",
                 "altText": ""
             }
@@ -147,12 +147,12 @@
         "legalLinks": [
             {
                 "type": "Link",
-                "label": "Privacy Policy",
+                "label": "隐私策略",
                 "url": "/"
             },
             {
                 "type": "Link",
-                "label": "Terms & Conditions",
+                "label": "条款",
                 "url": "/"
             }
         ],

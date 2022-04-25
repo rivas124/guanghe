@@ -17,19 +17,28 @@ export default function Carousel() {
     const [value, setValue] = React.useState('recents');
     const router = useRouter();
     const handleClick = () => {
-        var url = "http://192.168.31.163:3000/login";
-        var data = { "usercode": usercode, "userpwd": userpwd }
-        axios.post(url, data,).then(res => {
-            console.log(res);
-            if (res.data.code === -1) {
-                alert('error');
-            } else {
-                router.push('/');
-            }
-        })
+        if (usercode === '') {
+            // alert('用户名不能为空')
+            document.getElementById('hid').style.display = 'block'
+        } else if (userpwd === '') {
+            // alert('密码不能为空')
+            document.getElementById('pwdhid').style.display = 'block'
+        }else{
+            var url = "http://192.168.31.163:3000/login";
+            var data = { "usercode": usercode, "userpwd": userpwd }
+            axios.post(url, data,).then(res => {
+                console.log(res);
+                if (res.data.code === -1) {
+                    alert('用户名或密码错误');
+
+                } else {
+                    router.push('/');
+                }
+            })
+        }
     }
     return (
-        <>
+        <Box>
             <Box className={styles.middle}>
                 <ImgCarousel autoPlay infiniteLoop
                     width='100%'
@@ -55,7 +64,8 @@ export default function Carousel() {
                     required
                     className={styles.textField}
                 />
-                <br />
+                <span id='hid' style={{ display: 'none', color: 'red' }}>此输入框不能为空</span>
+                <span id='hid1' style={{ display: 'none', color: 'red' }}>✔</span>
                 <br />
                 <p>密码:</p>
                 <input
@@ -64,7 +74,9 @@ export default function Carousel() {
                     required
                     className={styles.textField}
                     type='password'
-                /><br />
+                />                
+                <span id='pwdhid' style={{ display: 'none', color: 'red' }}>此输入框不能为空</span>
+                <span id='pwdhid1' style={{ display: 'none', color: 'red' }}>✔</span>
                 <br />
                 <br />
                 <ButtonGroup type="primary" className={styles.buttongroup}>
@@ -79,6 +91,6 @@ export default function Carousel() {
                     <a className={styles.link}>注册账户</a>
                 </Link>
             </Box>
-        </>
+        </Box>
     )
 }

@@ -1,0 +1,19 @@
+.box{
+  flex-grow: 1 !important;
+  background-color: white !important;
+  display: flex !important;
+  width: 80% !important;
+  margin: 10% auto !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0,0.2)!important;
+}
+.box .root1{
+  border: 1px solid #dee2e6 !important;
+  width: 20% !important;
+}
+.box .root1 .tab{
+  height:24px !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around !important;
+}

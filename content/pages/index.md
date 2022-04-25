@@ -6,7 +6,7 @@ sections:
     elementId: ''
     colors: colors-a
     quote: |
-      Attentively accumulate a bit to create the industry boutique
+      用心积淀，打造行业精品
     backgroundImage:
       url: /images/bg.jpg
       altText: Product Marketing Manager Quote
@@ -42,8 +42,8 @@ sections:
     elementId: ''
     variant: variant-a
     colors: colors-f
-    title: Member
-    subtitle: Good team
+    title: 成员
+    subtitle: 我们的团队
     actions: []
     people:
       - content/data/team/desmond-eagle.json
@@ -73,10 +73,10 @@ sections:
         justifyContent: center
   - colors: colors-a
     elementId: ''
-    title: Remote doesn’t mean alone. Here are so great features
+    title: 偏远并不意味着孤独。这里有很多很棒的功能
     subtitle: >-
-      These are all excellent features that will provide exactly the things
-      you’re looking for.
+      这些都是非常优秀的特性，能够提供准确的功能
+      你正在寻找。
     items:
       - type: FeaturedItem
         title: React
@@ -180,7 +180,7 @@ sections:
     variant: variant-a
     actions:
       - type: Button
-        label: All blog
+        label: 所有日志
         altText: View All Posts
         url: /blog
         style: primary
@@ -205,55 +205,7 @@ sections:
         textAlign: center
       actions:
         justifyContent: center
-    title: Blog
+    title: 日志
     colors: colors-a
     recentCount: 3
-  - type: ContactSection
-    colors: colors-f
-    backgroundSize: inset
-    title: Get early access
-    text: >
-      Sign up your team today to be the first to try out our new product to
-      increase your team’s productivity
-    form:
-      type: FormBlock
-      variant: variant-b
-      elementId: sign-up-form
-      destination: ''
-      action: /.netlify/functions/submission_created
-      fields:
-        - name: email
-          label: Email
-          hideLabel: true
-          placeholder: Your email
-          isRequired: true
-          width: full
-          type: EmailFormControl
-      submitLabel: Sign Up
-      styles:
-        submitLabel:
-          textAlign: center
-    styles:
-      self:
-        height: auto
-        width: wide
-        margin:
-          - mt-24
-          - mb-0
-          - ml-4
-          - mr-4
-        padding:
-          - pt-24
-          - pb-24
-          - pr-4
-          - pl-4
-        alignItems: center
-        justifyContent: center
-        flexDirection: row
-        borderRadius: xx-large
-        boxShadow: xx-large
-      title:
-        textAlign: center
-      text:
-        textAlign: center
 ---

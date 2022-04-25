@@ -8,6 +8,7 @@ excerpt: >-
   semper. Donec sed facilisis nibh.
 featuredImage:
   type: ImageBlock
+  url: /images/post-5.jpg
   altText: Post Image
 bottomSections:
   - elementId: ''
