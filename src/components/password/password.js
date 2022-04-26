@@ -7,14 +7,12 @@ export default function Password() {
     return (
         <Box className='pwd-root'>
             <h2>Password Settings</h2>
-            <form>
-                <h5>Old password</h5>
+                <span>Old password</span><br/>
                 <input type='text' className='pwd-input' />
-                <h5>New password</h5>
+                <span>New password</span>
+                <input type='text' className='pwd-input' /><br/><br/>
+                <span>Confirm new password</span><br/>
                 <input type='text' className='pwd-input' />
-                <h5>Confirm new password</h5>
-                <input type='text' className='pwd-input' />
-            </form>
             <Footer />
         </Box>
     )

@@ -1,6 +1,9 @@
 .root{
+    span{
+        font-size: 15px;
+    }
     .input{
-        width: 50%;
+        width: 40%;
         height: 30px;
         border: 1px solid #dee2e6;
     }
@@ -16,4 +19,14 @@
 .page1-cancel{
     width: 20%;
     height: 3vw;
+}
+
+@media screen and (max-width:1210px) {
+    .root{
+        .input{
+            width: 80%;
+            height: 30px;
+            border: 1px solid #dee2e6;
+        }
+}
 }

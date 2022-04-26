@@ -12,6 +12,7 @@ export default function applicationsecurity() {
             <input type='text' className='security-input' />
             <h5>Two-factor auth</h5>
             <input type='text' className='security-input' />
+            <br />
             <input type='checkbox' className='security-checkbox'/>
             <p style={{display:'inline'}}> Recovery</p>
         </form>
