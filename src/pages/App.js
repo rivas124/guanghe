@@ -4,17 +4,17 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Account from './components/Account/account';
-import './App.css'
+import Account from '../components/Account/account';
+import styles from './App.module.scss'
 import HomeIcon from '@mui/icons-material/Home';
 import KeyIcon from '@mui/icons-material/Key';
 import PersonIcon from '@mui/icons-material/Person';
 import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import Password from './components/password/password';
-import Security from './components/Security/security';
-import Application from './components/Application/application';
-import Notification from './components/Notification/notification';
+import Password from '../components/password/password';
+import Security from '../components/Security/security';
+import Application from '../components/Application/application';
+import Notification from '../components/Notification/notification';
 import axios from 'axios'
 
 function TabPanel(props) {
@@ -53,8 +53,7 @@ function a11yProps(index) {
 export default function VerticalTabs() {
   
   const [value, setValue] = React.useState(1);
-  const [info , setInfo] = React.useState(null)
-  
+  const [info , setInfo] = React.useState({info:null})
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -70,42 +69,42 @@ export default function VerticalTabs() {
     console.log(info)
   return (
     <Box
-      className='box'
+      className={styles.box}
     >
       <Tabs
         orientation="vertical"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        className='root1'
+        className={styles.root1}
       >
-        <Box className='app-box'>
+        <Box className={styles.app_box}>
             <img 
             src={'http://192.168.31.163:3000/'+info.imgurl}
-            className='app-img'/>
-            <p style={{marginLeft:'150%',display:'flex',justifyContent: 'flex-end'}}></p>
+            className={styles.app_img}/>
+            <p style={{marginLeft:'150%',display:'flex',justifyContent: 'flex-end'}}>{info.firstName} {info.lastName}</p>
         </Box>
-        <Tab icon={<HomeIcon />} label="Account" {...a11yProps(1)} className='tab' />
-        <Tab icon={<KeyIcon />} label="Password" {...a11yProps(2)} className='tab'/>
-        <Tab icon={<PersonIcon/>} label="Security" {...a11yProps(3)} className='tab'/>
-        <Tab icon={<PersonalVideoIcon />} label="Application" {...a11yProps(4)} className='tab'/>
-        <Tab icon={<NotificationsActiveIcon />}label="Notification" {...a11yProps(5)} className='tab'/>
+        <Tab icon={<HomeIcon />} label="Account" {...a11yProps(1)} className={styles.tab} />
+        <Tab icon={<KeyIcon />} label="Password" {...a11yProps(2)} className={styles.tab}/>
+        <Tab icon={<PersonIcon/>} label="Security" {...a11yProps(3)} className={styles.tab}/>
+        <Tab icon={<PersonalVideoIcon />} label="Application" {...a11yProps(4)} className={styles.tab}/>
+        <Tab icon={<NotificationsActiveIcon />}label="Notification" {...a11yProps(5)} className={styles.tab}/>
       </Tabs>
-      <TabPanel value={value} index={1} className='tabpanel'>
+      <TabPanel value={value} index={1} className={styles.tabpanel}>
           <Account 
               userInfo = {info}
           /> 
       </TabPanel>
-      <TabPanel value={value} index={2} className='tabpanel'>
+      <TabPanel value={value} index={2} className={styles.tabpanel}>
         <Password />
       </TabPanel>
-      <TabPanel value={value} index={3} className='tabpanel'>
+      <TabPanel value={value} index={3} className={styles.tabpanel}>
         <Security />
       </TabPanel>
-      <TabPanel value={value} index={4} className='tabpanel'>
+      <TabPanel value={value} index={4} className={styles.tabpanel}>
         <Application />
       </TabPanel>
-      <TabPanel value={value} index={5} className='tabpanel'>
+      <TabPanel value={value} index={5} className={styles.tabpanel}>
         <Notification />
       </TabPanel>
     </Box>

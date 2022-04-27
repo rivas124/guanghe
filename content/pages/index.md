@@ -78,7 +78,7 @@ sections:
       这些都是非常优秀的特性，能够提供准确的功能
       你正在寻找。
     items:
-      - type: FeaturedItem
+      - type: Link
         title: React
         featuredImage:
           url: /images/faster.svg

@@ -1,0 +1,58 @@
+.root{
+    span{
+        font-size: 15px;
+    }
+    .input{
+        width: 40%;
+        height: 30px;
+        border: 1px solid #dee2e6;
+    }
+    .textarea{
+        border: 1px solid #dee2e6;
+        height: 100px;
+        width: 80%;
+    }
+    .rightinputtitle{
+        position: relative;
+        bottom: 30px;
+        left: 70px;
+    }
+}
+.page1-update{
+    width: 20%;
+    height: 3vw;
+}
+.page1-cancel{
+    width: 20%;
+    height: 3vw;
+}
+
+@media screen and (max-width:1325px) {
+    .root{
+        .input{
+            width: 30%;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .root{
+    h2{
+        font-size: 25px;
+    }
+}
+}
+
+@media screen and (max-width:550px) {
+    .root{
+        span{
+            display: block;
+            position: relative;
+            left: 0;
+            bottom: 0;
+        }
+        input{
+            display: block;
+        }
+    }
+}

@@ -35,6 +35,12 @@
                 "label": "关于",
                 "url": "/faq",
                 "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "个人信息",
+                "url": "/App",
+                "altText": ""
             }
         ],
         "secondaryLinks": [

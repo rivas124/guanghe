@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import { Box, Button } from '@mui/material'
-import './styles.scss'
+import styles from './styles.module.scss'
 import Footer from '../footer/footer'
 
 export default function applicationsecurity() {
     return (
-        <Box className='security-root'>
+        <Box className={styles.security_root}>
         <h2>Security Settings</h2>
         <form>
-            <h5>Login</h5>
-            <input type='text' className='security-input' />
-            <h5>Two-factor auth</h5>
-            <input type='text' className='security-input' />
+            <p>Login</p>
+            <input type='text' className={styles.security_input} />
+            <p>Two-factor auth</p>
+            <input type='text' className={styles.security_input} />
             <br />
-            <input type='checkbox' className='security-checkbox'/>
+            <input type='checkbox' className={styles.security_checkbox}/>
             <p style={{display:'inline'}}> Recovery</p>
         </form>
             <Footer />
