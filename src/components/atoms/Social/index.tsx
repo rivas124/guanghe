@@ -1,24 +1,14 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Link from '../Link';
-import Facebook from '../../svgs/facebook';
-import GitHub from '../../svgs/github';
-import Instagram from '../../svgs/instagram';
-import LinkedIn from '../../svgs/linkedin';
-import Reddit from '../../svgs/reddit';
-import Twitter from '../../svgs/twitter';
-import Vimeo from '../../svgs/vimeo';
-import YouTube from '../../svgs/youtube';
+import Facebook from '../../../assets/svgs/facebook';
+import Instagram from '../../../assets/svgs/instagram';
+import Twitter from '../../../assets/svgs/twitter';
 
 const iconMap = {
     facebook: Facebook,
-    github: GitHub,
     instagram: Instagram,
-    linkedin: LinkedIn,
-    reddit: Reddit,
-    twitter: Twitter,
-    vimeo: Vimeo,
-    youtube: YouTube
+    twitter: Twitter
 };
 
 export default function Social(props) {

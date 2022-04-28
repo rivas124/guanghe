@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import styles from './header.module.scss'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ButtonGroup from '@mui/material/ButtonGroup';

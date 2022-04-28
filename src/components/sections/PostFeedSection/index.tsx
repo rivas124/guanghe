@@ -6,7 +6,6 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import { getDataAttrs } from '../../../utils/get-data-attrs';
 import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
-import ArrowRightIcon from '../../svgs/arrow-right';
 import getPageUrlPath from '../../../utils/get-page-url-path';
 
 export default function PostFeedSection(props) {
@@ -254,7 +253,6 @@ function postsVariantC(props) {
                                     <div className="mt-3">
                                         <div className="sb-component sb-component-block sb-component-link">
                                             <span>Read post</span>
-                                            <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
                                         </div>
                                     </div>
                                 </div>

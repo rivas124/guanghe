@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import styles from './carousel.module.scss'
 import { useRouter } from 'next/router';
 import Image from 'next/image'
@@ -27,7 +27,6 @@ export default function Carousel() {
             var url = "http://192.168.31.163:3000/login";
             var data = { "usercode": usercode, "userpwd": userpwd }
             axios.post(url, data,).then(res => {
-                console.log(res);
                 if (res.data.code === -1) {
                     alert('用户名或密码错误');
 

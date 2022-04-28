@@ -1,6 +1,6 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga' // 引入createSagaMiddleware
-import mySaga from './mysaga'
+import Sagas from './Sagas'
 const initalLogin = {
     isLogin: false, // 是否登陆
     loading: false, // 登陆状态
@@ -9,7 +9,6 @@ const initalLogin = {
 }
 const sagaMiddleware = createSagaMiddleware() // 创建中间件
 function loginReducer(state = {...initalLogin}, action) {
-    console.log('loginReducer', action)
     switch (action.type) {
         case 'requestLogin':
             return {...state, loading: true}
@@ -26,5 +25,5 @@ const store = createStore(
     // applyMiddleware(thunk)
     applyMiddleware(sagaMiddleware) // 将中间件放入applyMiddleware
 )
-sagaMiddleware.run(mySaga) // 此处必须执行run()
+sagaMiddleware.run(Sagas) // 此处必须执行run()
 export default store
