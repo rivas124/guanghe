@@ -1,14 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Link from '../Link';
-import Facebook from '../../../assets/svgs/facebook';
-import Instagram from '../../../assets/svgs/instagram';
-import Twitter from '../../../assets/svgs/twitter';
+
 
 const iconMap = {
-    facebook: Facebook,
-    instagram: Instagram,
-    twitter: Twitter
+    
 };
 
 export default function Social(props) {
