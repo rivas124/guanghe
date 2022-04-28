@@ -3,10 +3,15 @@ import classNames from 'classnames';
 import Link from '../Link';
 
 
+const iconMap = {
+   
+};
+
 export default function Action(props) {
     const { type, label, altText, url, showIcon } = props;
     const icon = props.icon || 'arrowLeft';
     const iconPosition = props.iconPosition || 'right';
+    const IconComponent = iconMap[icon];
     const annotationPrefix = props['data-sb-field-path'] || '';
     const annotations = [
         `${annotationPrefix}`,
@@ -33,6 +38,15 @@ export default function Action(props) {
             data-sb-field-path={annotations.join(' ').trim()}
         >
             {label && <span>{label}</span>}
+            {showIcon && IconComponent && (
+                <IconComponent
+                    className={classNames('fill-current h-5 w-5', {
+                        'order-first': iconPosition === 'left',
+                        'mr-1.5': label && iconPosition === 'left',
+                        'ml-1.5': label && iconPosition === 'right'
+                    })}
+                />
+            )}
         </Link>
     );
 }
