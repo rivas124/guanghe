@@ -1,6 +1,6 @@
-import Header from "../components/RegisterComponent/header/header";
+import Header from "../components/LoginComponent/header/header";
 import Regform from "../components/RegisterComponent/regform/regform";
-import Footer from "../components/RegisterComponent/footer/footer";
+import Footer from "../components/LoginComponent/footer/footer";
 
 function Register(){
     return(

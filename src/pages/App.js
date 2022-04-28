@@ -16,6 +16,7 @@ import Security from '../components/Security/security';
 import Application from '../components/Application/application';
 import Notification from '../components/Notification/notification';
 import axios from 'axios'
+import Header from '../components/sections/Header'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -51,7 +52,6 @@ function a11yProps(index) {
 }
 
 export default function VerticalTabs() {
-  
   const [value, setValue] = React.useState(1);
   const [info , setInfo] = React.useState({info:null})
 
@@ -62,12 +62,11 @@ export default function VerticalTabs() {
     React.useEffect(()=>{
         axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
             userInfo = res.data.data[0]
-            console.log(userInfo)
             setInfo(userInfo)
         })
     },[])
-    console.log(info)
   return (
+    <>
     <Box
       className={styles.box}
     >
@@ -108,5 +107,6 @@ export default function VerticalTabs() {
         <Notification />
       </TabPanel>
     </Box>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Box, Button } from '@mui/material'
 import styles from './styles.module.scss'
-import Footer from '../footer/footer'
+import Footer from '../bottomButton/bottomButton'
 
 export default function applicationsecurity() {
     return (

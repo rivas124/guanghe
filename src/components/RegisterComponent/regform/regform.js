@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styles from './regform.module.scss'
-import Box from '@material-ui/core/Box';
-import TextField from '@material-ui/core/TextField';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Button from '@material-ui/core/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import Img from '../../../assets/images/regbackimg1.jpeg'
 import axios from 'axios';
@@ -24,7 +24,6 @@ export default function regform() {
         var url = "http://192.168.31.163:3000/register";
         var data = { "usercode": usercode, "userpwd": userpwd, "tel": tel }
         axios.post(url, data,).then(res => {
-            console.log(res);
             if (res.data.code === -1) {
                 alert('error');
             } else {

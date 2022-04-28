@@ -5,17 +5,8 @@ import styles from './styles.module.scss'
 import axios from 'axios'
 import { compose } from '@mui/system'
 export default function Account(
-    userInfo
+    userInfo: { userInfo: { firstName: string | number | readonly string[]; lastName: string | number | readonly string[]; email: string | number | readonly string[]; tel: string | number | readonly string[]; company: string | number | readonly string[]; Desi: string | number | readonly string[]; Bio: string | number | readonly string[] } }
 ) {
-    console.log(userInfo)
-    //   const [info , setInfo] = React.useState(null)
-    //     var userInfo = []    
-    //         axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
-    //             userInfo = res.data.data[0]
-    //             console.log(userInfo)
-    //             setInfo(userInfo)
-    //         })
-    //             console.log(info)
     return (
         <Box className={styles.root}>
             <h2>Account Settings</h2>
@@ -38,7 +29,7 @@ export default function Account(
                 <input type='text' className={styles.input} defaultValue={userInfo.userInfo.Desi}/><br /><br/>
 
                 <span>Bio</span><br/>
-                <textarea rows="1" cols="30" className={styles.textarea} defaultValue={userInfo.userInfo.Bio}></textarea>
+                <textarea className={styles.textarea} defaultValue={userInfo.userInfo.Bio}></textarea>
 
                 <Box>
                 <Button className={styles.page1_update} variant="contained">Update</Button>
