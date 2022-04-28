@@ -1,45 +1,24 @@
-# Next.js with TypeScript example
+# A New Stackbit Project
 
-## How to use
+Welcome to your new project created with Stackbit!
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+Here are a few useful tips & links:
 
-<!-- #default-branch-switch -->
+## Set up
 
-```sh
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs-with-typescript
-cd nextjs-with-typescript
-```
+1. If you haven't yet transferred this project to your GitHub account, click on the **Gear** icon in the visual editor to open **Project Settings** and start the transfer. [Learn More](https://docs.stackbit.com/how-to-guides/transfer-repo/).
+1. Once the repository is in your account, the Project Settings window will show you the commands to run for setting up your local environment. [Learn More](https://docs.stackbit.com/how-to-guides/local-development/).
 
-Install it and run:
+## Learn the basics
 
-```sh
-npm install
-npm run dev
-```
+1. It's a good idea to go through our [Getting Started tutorial](https://docs.stackbit.com/getting-started/). It will give you a small taste of component development as well, and links for further reading.
+1. To go deeper into how things work, head to the [Conceptual Guides](https://docs.stackbit.com/conceptual-guides/).
+1. For more concise, practical information see the [How-to Guides](https://docs.stackbit.com/how-to-guides/).
 
-or:
+## Get answers
 
-<!-- #default-branch-switch -->
+[Join us on Discord](https://discord.gg/HUNhjVkznH) for community support.
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui-org/material-ui/tree/master/examples/nextjs-with-typescript)
+## Do your thing
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui-org/material-ui/tree/master/examples/nextjs-with-typescript)
-
-## The idea behind the example
-
-The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5. If you prefer, you can [use styled-components instead](https://mui.com/guides/interoperability/#styled-components).
-
-## The link component
-
-Next.js has [a custom Link component](https://nextjs.org/docs/api-reference/next/link).
-The example folder provides adapters for usage with MUI.
-More information [in the documentation](https://mui.com/guides/routing/#next-js).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/getting-started/templates/) section.
+Time for you to build your website the way you want it, including modifying this README 😉. 

@@ -1,0 +1,41 @@
+.box{
+  background-color: #fff;
+}
+.root {
+  font-size: 25px;
+  font-weight: 500;
+  width: 90%;
+  height: 100px;
+  line-height: 100px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+}
+.buttongroup{
+  float: right;
+  position: relative;
+  bottom: 65px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width:1010px) {
+  .box{
+    .root{
+      margin-left: 0;
+    }
+    .buttongroup{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width:460px) {
+  .box{
+    .root{
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
+}

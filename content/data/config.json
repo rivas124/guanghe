@@ -1,0 +1,177 @@
+{
+    "type": "Config",
+    "favicon": "/images/logo.png",
+    "header": {
+        "headerVariant": "variant-c",
+        "primaryColors": "colors-a",
+        "secondaryColors": "colors-f",
+        "title": "沈阳广合科技发展有限公司",
+        "isTitleVisible": true,
+        "primaryLinks": [
+            {
+                "type": "Link",
+                "label": "主页",
+                "url": "/",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "altText": "",
+                "url": "/",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "elementId": "",
+                "label": "成员"
+            },
+            {
+                "type": "Link",
+                "label": "日志",
+                "altText": "Blog",
+                "url": "/blog"
+            },
+            {
+                "type": "Link",
+                "label": "关于",
+                "url": "/faq",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "个人信息",
+                "url": "/App",
+                "altText": ""
+            }
+        ],
+        "secondaryLinks": [
+            {
+                "type": "Button",
+                "label": "登陆",
+                "url": "/login",
+                "altText": "Sign up",
+                "style": "primary"
+            }
+        ],
+        "styles": {
+            "self": {
+                "width": "narrow",
+                "padding": [
+                    "pt-5",
+                    "pb-5",
+                    "pr-4",
+                    "pl-4"
+                ]
+            }
+        },
+        "logo": {
+            "altText": "altText of the image",
+            "caption": "Caption of the image",
+            "elementId": "",
+            "styles": {
+                "self": {
+                    "opacity": 100
+                }
+            },
+            "type": "ImageBlock",
+            "url": "/images/logo.png"
+        }
+    },
+    "footer": {
+        "colors": "colors-a",
+        "logo": {
+            "altText": "altText of the image",
+            "caption": "Caption of the image",
+            "elementId": "",
+            "styles": {
+                "self": {
+                    "opacity": 100
+                }
+            },
+            "type": "ImageBlock",
+            "url": "/images/logo.png"
+        },
+        "title": "沈阳广合科技发展有限公司",
+        "contacts": {
+            "title": "Contact details",
+            "phoneNumber": "850-123-1234",
+            "phoneAltText": "Our phone",
+            "email": "info@lorem.mail",
+            "emailAltText": "Our email",
+            "address": "沈阳",
+            "addressAltText": "Our address"
+        },
+        "copyrightText": "技术支持 [百度](https://www.baidu.com/)",
+        "primaryLinks": [
+            {
+                "type": "Link",
+                "label": "主页",
+                "url": "/",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "职业",
+                "url": "/",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "常见问题",
+                "url": "/",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "日志",
+                "url": "/blog",
+                "altText": ""
+            }
+        ],
+        "socialLinks": [
+            {
+                "type": "Social",
+                "altText": "Twitter",
+                "label": "Twitter",
+                "url": "/",
+                "icon": "twitter"
+            },
+            {
+                "type": "Social",
+                "altText": "Instagram",
+                "label": "Instagram",
+                "url": "/",
+                "icon": "instagram"
+            },
+            {
+                "type": "Social",
+                "altText": "Facebook",
+                "label": "Facebook",
+                "url": "/",
+                "icon": "facebook"
+            }
+        ],
+        "legalLinks": [
+            {
+                "type": "Link",
+                "label": "隐私策略",
+                "url": "/"
+            },
+            {
+                "type": "Link",
+                "label": "条款",
+                "url": "/"
+            }
+        ],
+        "styles": {
+            "self": {
+                "width": "narrow",
+                "padding": [
+                    "pt-16",
+                    "pb-16",
+                    "pr-4",
+                    "pl-4"
+                ]
+            }
+        }
+    }
+}
