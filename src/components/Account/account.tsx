@@ -5,12 +5,12 @@ import styles from './styles.module.scss'
 import axios from 'axios'
 import { compose } from '@mui/system'
 export default function Account(
-    userInfo: { userInfo: { firstName: string | number | readonly string[]; lastName: string | number | readonly string[]; email: string | number | readonly string[]; tel: string | number | readonly string[]; company: string | number | readonly string[]; Desi: string | number | readonly string[]; Bio: string | number | readonly string[] } }
+    userInfo
 ) {
     return (
         <Box className={styles.root}>
             <h2>Account Settings</h2>
-                <span>First Name</span><br/>
+                <span >First Name</span><br/>
                 <input type='text' className={styles.input} defaultValue={userInfo.userInfo.firstName} />
 
                 <span className={styles.rightinputtitle}>Last Name</span>

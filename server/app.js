@@ -13,6 +13,9 @@ var apiRouter = require('./routes/api')
 
 var getUserInfoRouter = require('./routes/getUserInfo')
 var updatePwdRouter = require('./routes/updatePwd')
+var updateAppRouter = require('./routes/updateApplication')
+var updateNotiRouter = require('./routes/updateNotification')
+
 
 const {process_params} = require("express/lib/router");
 const bodyParser = require('body-parser');
@@ -46,12 +49,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Configure the new route.
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+
 app.use('/login',loginRouter)
 app.use('/register',registerRouter)
 app.use('/api',apiRouter)
 
 app.use('/getUserInfo',getUserInfoRouter)
 app.use('/updatePwd',updatePwdRouter)
+app.use('/updateApp',updateAppRouter)
+app.use('/updateNoti',updateNotiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

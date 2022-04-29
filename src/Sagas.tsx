@@ -14,7 +14,6 @@ const UserService = {
     }
 }
 function* loginHandle(action) { // generator将异步操作改为同步
-    console.log('loginHandle', action)
     try{
         const res = yield call(UserService.login, action.name) //call执行UserService.login，并且将action.name当参数传递过去
         yield put({type: 'requestSuccess', res}) // put和dispatch类似，执行reducer
