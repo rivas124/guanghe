@@ -1,5 +1,6 @@
 const express = require('express')
 const db = require('../util/db')
+const md5 = require("md5");
 const app = express.Router()
 
 /* Register. */
@@ -7,9 +8,10 @@ app.post('/', (req, res) => {
     // Gets the parameters passed from the foreground page
     let user = {
         usercode: req.body.usercode,
-        userpwd: req.body.userpwd,
+        userpwd: md5(req.body.userpwd),
         tel: req.body.tel
     }
+
     // Check whether the parameter is null
     if (!user.usercode) {
         return res.json({

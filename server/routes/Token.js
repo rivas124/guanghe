@@ -2,6 +2,7 @@ const express = require('express')
 const db = require('../util/db')
 const app = express.Router()
 const jwt = require('jsonwebtoken');
+const md5 = require("md5");
 const secret = 'secret12345';
 
     function verify(result){
@@ -22,7 +23,7 @@ const secret = 'secret12345';
             const token = req.headers.authorization;
             const {username,password} = jwt.verify(token, secret); // 对token进行解密查找
             let sql = 'select * from test where usercode=? and userpwd=?';
-            let sqlArr = [username,password];
+            let sqlArr = [username,md5(password)];
             let result
             db.query(sql,sqlArr,function (results) { result = results });
             if (result.length === 0) {

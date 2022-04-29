@@ -2,6 +2,7 @@ const express = require('express')
 const db = require('../util/db')
 const app = express.Router()
 const jwt = require('jsonwebtoken');
+const md5 = require("md5");
 const secret = 'secret12345';
 
 /* Login. */
@@ -9,7 +10,7 @@ app.post('/', (req, res, next) => {
     // SQL > select * from user
     let user = {
         username: req.body.usercode,
-        password: req.body.userpwd
+        password: md5(req.body.userpwd)
     }
     db.query('SELECT * FROM userInfo where usercode=? and userpwd=?', [user.username,user.password], function (results, fields) {
         // Check whether the parameter is null

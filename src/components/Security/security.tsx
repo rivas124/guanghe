@@ -6,7 +6,7 @@ import Footer from '../bottomButton/bottomButton'
 export default function applicationsecurity() {
     return (
         <Box className={styles.security_root}>
-        <h2>Security Settings</h2>
+        <h4>Security Settings</h4>
         <form>
             <p>Login</p>
             <input type='text' className={styles.security_input} />

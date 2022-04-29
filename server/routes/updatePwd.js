@@ -1,13 +1,14 @@
 const express = require('express')
 const db = require('../util/db')
+const md5 = require("md5");
 const app = express.Router()
 
 /* Update password. */
 app.post('/', (req, res) => {
     let user = {
         usercode: req.body.usercode,
-        userpwd: req.body.userpwd,
-        updatepwd: req.body.updatepwd
+        userpwd: md5(req.body.userpwd),
+        updatepwd: md5(req.body.updatepwd)
     }
     if (!user.usercode) {
         return res.json({
@@ -51,9 +52,7 @@ app.post('/', (req, res) => {
                 })
             }
         }
-        setTimeout(() => {
-            res.json(_data)
-        }, 200);
+        res.json(_data)
     })
 })
 
