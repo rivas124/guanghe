@@ -30,13 +30,15 @@ export default function Carousel() {
             var url = "http://192.168.31.163:3000/login";
             var data = { "usercode": usercode, "userpwd": userpwd }
             axios.post(url, data,).then(res => {
-
+                console.log(res)
                 if (res.data.code === -1) {
-            setAlert(true)
-
+                    setAlert(true)
                 } else {
-                    localStorage.setItem('token',res.data.data.token);
-                    localStorage.setItem('username',res.data.data.userInfo.username)
+                    // localStorage.setItem('token',res.data.data.token);
+                    // localStorage.setItem('username',res.data.data.userInfo.username)
+
+                    global.sessionStorage.setItem('token',res.data.data.token);
+                    global.sessionStorage.setItem('username',res.data.data.userInfo.username)
                     router.push('/');
 
                 }
@@ -44,7 +46,7 @@ export default function Carousel() {
         }
     }
     return (
-        <Box>
+        <Box style={{height:'100px'}}>
             <Box>
             {alert ? 
             <Alert 

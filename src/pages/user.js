@@ -16,10 +16,15 @@ import Security from '../components/Security/security';
 import Application from '../components/Application/application';
 import Notification from '../components/Notification/notification';
 import axios from 'axios'
+import Header from '../components/sections/HomepageTop';
+import { get } from 'http';
+import { useRouter } from 'next/router';
+import Alert from '@mui/material/Alert';
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -53,6 +58,8 @@ function a11yProps(index) {
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(1);
   const [info , setInfo] = React.useState({info:null})
+  const [alert , setAlert] = React.useState(false);
+  const router = useRouter();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -62,10 +69,37 @@ export default function VerticalTabs() {
         axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
             userInfo = res.data.data[0]
             setInfo(userInfo)
+            console.log(res)
         })
+        if(global.sessionStorage.getItem('token') == null){
+          router.push('/login');
+          setAlert(true)
+        }
     },[])
   return (
     <Box className={styles.AppRoot}>
+      <Box>
+            {alert ? 
+            <Alert 
+            severity="success" 
+            variant="filled"
+          action={
+            <IconButton
+              aria-label="close"
+              size="small"
+              onClick={() => {
+                setAlert(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+          sx={{ mb: 2 , position:'absolute' ,zIndex:1000 ,width:'30%'}}
+        >
+          请先登录
+        </Alert>
+                :<></>}
+            </Box>
     <h2 className={styles.App_h2}>Account Settings</h2>
     <Box
       className={styles.box}
@@ -98,7 +132,8 @@ export default function VerticalTabs() {
         <Password />
       </TabPanel>
       <TabPanel value={value} index={3} className={styles.tabpanel}>
-        <Security />
+        <Security 
+        userInfo = {info}/>
       </TabPanel>
       <TabPanel value={value} index={4} className={styles.tabpanel}>
         <Application 

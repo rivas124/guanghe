@@ -13,18 +13,25 @@ export default function Password() {
   const [updatepwd, setUpdatePwd] = React.useState("");
   const [userpassword, setUserpassword] = React.useState("");
   const [alert , setAlert] = React.useState(false);
+  const [alert1 , setAlert1] = React.useState(false);
   const router = useRouter();
   const handleClick = () => {
     var url = "http://192.168.31.163:3000/updatePwd"
-    var data = {usercode:localStorage.getItem('username'),userpwd:userpwd , updatepwd:updatepwd}
+    var data = {usercode:global.sessionStorage.getItem('username'),userpwd:userpwd , updatepwd:updatepwd}
     axios.post(url,data,).then(res => {
         if(res.data.msg === 'The old password is incorrect'){
             setAlert(true)
-        }else{
+        }else if(updatepwd !== userpassword){
+          setAlert1(true)
+        }else if(res.data.msg !== 'The old password is incorrect' && updatepwd === userpassword){
             router.push('/login');
         }
     })
     
+}
+
+const getback = () => {
+  router.push('/')
 }
   return (
     <Box className={styles.pwd_root}>
@@ -44,11 +51,29 @@ export default function Password() {
           原密码错误
         </Alert>
                 :<></>}
+
+
+{alert1 ? 
+            <Alert severity="error"
+          action={
+            <IconButton aria-label="close" size="small"
+              onClick={() => {
+                setAlert1(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+          sx={{ mb: 2 , position:'absolute' ,zIndex:1000 ,width:'30%'}}
+        >
+          两次密码输入不一致
+        </Alert>
+                :<></>}
       <h4>Password Settings</h4>
       <span>Old password</span>
       <br />
       <input
-        type="text"
+        type="password"
         className={styles.pwd_input}
         value={userpwd}
         onChange={(e) => {
@@ -60,7 +85,7 @@ export default function Password() {
       <span>New password</span>
       <br />
       <input
-        type="text"
+        type="password"
         className={styles.pwd_input}
         onChange={(e) => {
             setUpdatePwd(e.target.value);
@@ -71,7 +96,7 @@ export default function Password() {
       <span>Confirm new password</span>
       <br />
       <input
-        type="text"
+        type="password"
         className={styles.pwd_input}
         onChange={(e) => {
             setUserpassword(e.target.value);
@@ -84,7 +109,7 @@ export default function Password() {
         >
           Update
         </Button>
-        <Button className={styles.cancel}>Cancel</Button>
+        <Button className={styles.cancel} onClick={getback}>Cancel</Button>
       </Box>
     </Box>
   );

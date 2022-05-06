@@ -2,12 +2,13 @@ import * as React from 'react';
 import Head from 'next/head';
 import classNames from 'classnames';
 
-import Header from '../../sections/Header';
-import Footer from '../../sections/Footer';
+import Header from '../../sections/HomepageTop';
+import Footer from '../../sections/HomepageBottom';
 import { seoGenerateTitle, seoGenerateMetaTags, seoGenerateMetaDescription } from '../../../utils/seo-utils';
 
 export default function DefaultBaseLayout(props) {
     const { page, site } = props;
+    console.log(site)
     const siteMeta = site?.__metadata || {};
     const pageMeta = page?.__metadata || {};
     const title = seoGenerateTitle(page, site);
