@@ -69,7 +69,7 @@ function PageLinks({ pageIndex, baseUrlPath, numOfPages }) {
 
     // renders prev "←" button, if the current page is the first page, the button is disabled
     if (pageIndex > 0) {
-        pageLinks.push(<PageLink key="prev" pageIndex={pageIndex - 1} buttonLabel="←" baseUrlPath={baseUrlPath} />);
+        pageLinks.push(<PageLink key="prev" pageIndex={pageIndex - 1} buttonLabel="←" baseUrlPath={baseUrlPath}/>);
     } else {
         pageLinks.push(<PageLinkDisabled key="prev" buttonLabel="←" />);
     }
