@@ -15,6 +15,8 @@ var getUserInfoRouter = require('./routes/getUserInfo')
 var updatePwdRouter = require('./routes/updatePwd')
 var updateAppRouter = require('./routes/updateApplication')
 var updateNotiRouter = require('./routes/updateNotification')
+var updateUserInfo = require('./routes/updateUserInfo')
+var updateFactor = require('./routes/updateFactor')
 
 
 const {process_params} = require("express/lib/router");
@@ -59,6 +61,8 @@ app.use('/getUserInfo',getUserInfoRouter)
 app.use('/updatePwd',updatePwdRouter)
 app.use('/updateApp',updateAppRouter)
 app.use('/updateNoti',updateNotiRouter)
+app.use('/updateUserInfo',updateUserInfo)
+app.use('/updateFactor',updateFactor)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

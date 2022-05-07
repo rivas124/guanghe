@@ -45,7 +45,7 @@ const StaticPropsResolvers = {
         return resolveReferences(props, ['author', 'category'], data.objects, debugContext);
     },
     PostFeedLayout: (props, data) => {
-        const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
+        const numOfPostsPerPage = props.numOfPostsPerPage ?? 9;
         const allPosts = getAllPostsSorted(data.objects);
         const paginationData = getPagedItemsForPage(props, allPosts, numOfPostsPerPage);
         const items = resolveReferences(paginationData.items, ['author', 'category'], data.objects);
