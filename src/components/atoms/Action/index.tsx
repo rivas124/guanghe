@@ -5,7 +5,7 @@ import Link from '../Link';
 const iconMap = {
 
 };
-let c=0;
+let sessionLength=0;
 console.log(global.sessionStorage)
 
 export default function Action(props) {
@@ -23,11 +23,11 @@ export default function Action(props) {
         `${annotationPrefix}.label#span[1]`,
         `${annotationPrefix}.icon#svg[1]`
     ];
-    let s = global.sessionStorage
+    let session = global.sessionStorage
     if(global.sessionStorage&&label==='登陆'){
         var b = true
-        console.log(s.length)
-        c=s.length
+        console.log(session.length)
+        sessionLength=session.length
     }
 
     const defaultStyle = type === 'Link' ? 'link' : 'secondary';
@@ -38,14 +38,14 @@ export default function Action(props) {
                 href={url}
                 aria-label={altText}
                 id={cssId}
-                className={c==2 && b ?'':(classNames(style === 'link' ? 'sb-component-link' : 'sb-component-button', cssClasses, {
+                className={sessionLength==2 && b ?'':(classNames(style === 'link' ? 'sb-component-link' : 'sb-component-button', cssClasses, {
                     'sb-component-button-primary': style === 'primary',
                     'sb-component-button-secondary': style === 'secondary'
                 }))}
                 // data-sb-field-path={annotations.join(' ').trim()}
             >
 
-                {c==2 && altText==='Sign up' ?'':label && <span>{c==2 && altText==='Sign up'?'':label}</span>}
+                {sessionLength==2 && altText==='Sign up' ?'':label && <span>{sessionLength==2 && altText==='Sign up'?'':label}</span>}
                 {showIcon && IconComponent && (
                     <IconComponent
                         className={classNames('fill-current h-5 w-5', {
