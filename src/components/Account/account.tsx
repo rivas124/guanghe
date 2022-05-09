@@ -33,10 +33,8 @@ export default function Account(
         setCompony(userinfo.company)
         setDesignation(userinfo.Desi)
         setBio(userinfo.Bio)
-        console.log(userinfo)
         })
     },[])
-console.log(firstname)
 
     const updateClick = () => {
         var url = 'http://192.168.31.163:3000/updateUserInfo'

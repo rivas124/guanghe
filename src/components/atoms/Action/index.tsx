@@ -6,7 +6,6 @@ const iconMap = {
 
 };
 let sessionLength=0;
-console.log(global.sessionStorage)
 
 export default function Action(props) {
 
@@ -26,7 +25,6 @@ export default function Action(props) {
     let session = global.sessionStorage
     if(global.sessionStorage&&label==='登陆'){
         var b = true
-        console.log(session.length)
         sessionLength=session.length
     }
 

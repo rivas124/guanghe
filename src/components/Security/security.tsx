@@ -18,7 +18,6 @@ export default function applicationsecurity(userInfo) {
 
     React.useEffect(() => {
         axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
-            console.log(res)
             var userinfo = res.data.data[0]
             setLogin(userinfo.Login)
             setTwoFactor(userinfo.TwoFactor)
@@ -40,8 +39,6 @@ export default function applicationsecurity(userInfo) {
             setRecovery(1)
         }
     }
-    console.log(recovery)
-    console.log(login)
 
     const getback = () => {
         router.push('/')
