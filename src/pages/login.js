@@ -8,11 +8,6 @@ function Login(props) {
     const { page, site } = props;
     const router = useRouter();
 
-    if(global.sessionStorage.getItem('token') !== null){
-        router.push('/');
-      }else{
-
-      }
     return (
         <>
             <Header />
