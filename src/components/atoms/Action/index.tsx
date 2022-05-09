@@ -38,7 +38,7 @@ export default function Action(props) {
                 href={url}
                 aria-label={altText}
                 id={cssId}
-                className={sessionLength==2 && b ?'':(classNames(style === 'link' ? 'sb-component-link' : 'sb-component-button', cssClasses, {
+                className={sessionLength==2 && b ?{style:'none'}:(classNames(style === 'link' ? 'sb-component-link' : 'sb-component-button', cssClasses, {
                     'sb-component-button-primary': style === 'primary',
                     'sb-component-button-secondary': style === 'secondary'
                 }))}
