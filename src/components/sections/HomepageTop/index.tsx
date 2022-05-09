@@ -46,7 +46,6 @@ function headerVariants(props) {
 }
 
 let c=0;
-console.log(global.sessionStorage)
 function headerVariantA(props) {
   const primaryLinks = props.primaryLinks || [];
   const secondaryLinks = props.secondaryLinks || [];
@@ -78,13 +77,11 @@ function headerVariantA(props) {
       .then((res) => {
         userInfo = res.data.data[0];
         setInfo(userInfo);
-        console.log(res);
       });
   }, []);
 
   let s = global.sessionStorage
   if(global.sessionStorage){
-      console.log(s.length)
       c = s.length
   }
   return (

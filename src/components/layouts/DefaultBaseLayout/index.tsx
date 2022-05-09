@@ -8,7 +8,6 @@ import { seoGenerateTitle, seoGenerateMetaTags, seoGenerateMetaDescription } fro
 
 export default function DefaultBaseLayout(props) {
     const { page, site } = props;
-    console.log(site)
     const siteMeta = site?.__metadata || {};
     const pageMeta = page?.__metadata || {};
     const title = seoGenerateTitle(page, site);

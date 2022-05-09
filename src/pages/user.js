@@ -69,7 +69,6 @@ export default function VerticalTabs() {
         axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
             userInfo = res.data.data[0]
             setInfo(userInfo)
-            console.log(res)
         })
         if(global.sessionStorage.getItem('token') == null){
           router.push('/login');

@@ -27,7 +27,9 @@ export default function PostFeedLayout(props) {
                     </div>
                 )}
                 {renderSections(topSections, 'topSections')}
-                <PostFeedSection {...postFeed} posts={items} pageLinks={pageLinks} data-sb-field-path="postFeed" />
+                <PostFeedSection {...postFeed} 
+                posts={items}
+                pageLinks={pageLinks} data-sb-field-path="postFeed" />
                 {renderSections(bottomSections, 'bottomSections')}
             </main>
         </BaseLayout>

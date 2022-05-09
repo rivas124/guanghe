@@ -30,7 +30,6 @@ export default function Carousel() {
             var url = "http://192.168.31.163:3000/login";
             var data = { "usercode": usercode, "userpwd": userpwd }
             axios.post(url, data,).then(res => {
-                console.log(res)
                 if (res.data.code === -1) {
                     setAlert(true)
                 } else {
