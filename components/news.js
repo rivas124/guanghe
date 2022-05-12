@@ -13,7 +13,6 @@ class news extends React.Component {
     componentDidMount(){
         axios.get('http://192.168.31.163:3000/getNews').then((res)=>{
             const newslist = res.data.data
-            console.log(newslist)
             this.setState({newslist:newslist});
         })
     }

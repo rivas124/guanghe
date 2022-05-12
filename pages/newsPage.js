@@ -9,7 +9,6 @@ import Footer from '../components/LoginComponent/footer/footer'
 
 const newsPage= ({router})=>{
     let arr = router.query
-    console.log(arr)
     const [info , setInfo] = React.useState('')
     React.useEffect(() => {
         setInfo(arr)
@@ -17,7 +16,6 @@ const newsPage= ({router})=>{
 
     var today = new Date(),
         date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    console.log(date)
     return (
         <>
         <Header />

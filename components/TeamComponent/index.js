@@ -4,16 +4,16 @@ import styles from './styles.module.scss'
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
+import Typography from "@mui/material/Typography";
 
 export default function TeamComponent() {
 
     return (
         <Box className={styles.root}>
             <Box className={styles.fontBox}>
-                <p className={styles.teamTitle}>成员</p>
-                <p className={styles.teamText}>我们的团队</p>
+                <Typography className={styles.teamTitle}>成员</Typography>
+                <Typography className={styles.teamText}>我们的团队</Typography>
+                <Typography color={'#82b1ff'} variant="h4">—</Typography>
             </Box>
             <ImageList sx={{ width: 1220, height: 300, margin: '0 auto' }} cols={4} rowHeight={270}>
                 {itemData.map((item) => (

@@ -15,15 +15,15 @@ class Network2 extends React.Component {
             <Box sx={{flexGrow: 1, width: '100%', height: '630px'}}>
                 <Grid container spacing={2} >
                     <Grid xs={4.3}></Grid>
-                    <Grid xs={4} p={18} style={{margin:'0 auto'}}>
+                    <Grid xs={4} p={18} style={{textAlign:'center'}}>
                         <Typography variant="h5" gutterBottom>
                             新闻动态
                         </Typography>
                         <Typography variant="body3">
-                            {'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'} NEWS
+                            NEWS
                         </Typography>
                         <Typography color={'#82b1ff'} variant="h4">
-                            {'\u00A0'}{'\u00A0'}{'\u00A0'} —
+                             —
                         </Typography>
                     </Grid>
                     <Grid xs={3.7}></Grid>
@@ -38,7 +38,6 @@ class Network2 extends React.Component {
                                                     pathname:'/newsPage',
                                                     query:newlist
                                                 }).then((res)=>{
-                                                    console.log(res)
                                                 })
                                             }}>{newlist.title}</a>
                                         </Typography>

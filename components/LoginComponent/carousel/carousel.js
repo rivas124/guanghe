@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 import Image from 'next/image'
 import Link from 'next/link'
 import { Carousel as ImgCarousel } from 'react-responsive-carousel';
-import loginImg2 from '../../../assets/images/login/LoginPage2.jpeg'
-import loginImg1 from '../../../assets/images/login/LoginPage1.jpeg'
+import loginImg2 from '../../../public/img/login/LoginPage2.jpeg'
+import loginImg1 from '../../../public/img/login/LoginPage1.jpeg'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
@@ -38,12 +38,6 @@ function TabPanel(props) {
     );
 }
 
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-
 function a11yProps(index) {
     return {
         id: `simple-tab-${index}`,
@@ -67,14 +61,15 @@ export default function Carousel() {
     const [userpassword, setUserpassword] = React.useState('');
     const [tel, setTel] = React.useState('');
     const router = useRouter();
-    
+    const [info , setInfo] = React.useState(null)
+
+    var userInfo = []
     const loginHandleClick = () => {
         
         if (userlogincode === '') {
             document.getElementById('hid').style.display = 'block'
         } else if (userloginpwd === '') {
             document.getElementById('pwdhid').style.display = 'block'
-            console.log(userloginpwd)
         } else {
             var url = "http://192.168.31.163:3000/login";
             var data = { "usercode": userlogincode, "userpwd": userloginpwd }
@@ -87,10 +82,20 @@ export default function Carousel() {
                     global.sessionStorage.setItem('token', res.data.data.token);
                     global.sessionStorage.setItem('username', res.data.data.userInfo.username)
                     setAlert4(true)
+                    setTimeout(() => {
+                        setAlert4(false);
+                      }, 3000);
                     router.push('/');
+
+                    axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
+                        userInfo = res.data.data[0]
+                        setInfo(userInfo)
+                        global.sessionStorage.setItem('img',res.data.data[0].imgurl)
+                    })
                 }
             })
         }
+
     }
 
     const regHandleClick = () => {

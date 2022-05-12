@@ -21,6 +21,7 @@
 }
 
 .portrait{
+  .walls{
   float: right;
   position: relative;
   bottom: 80px;
@@ -28,6 +29,7 @@
   .makeImageCircular{
     border-radius: 50%;
   }
+}
 }
 
 @media screen and (max-width:1010px) {

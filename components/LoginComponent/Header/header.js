@@ -9,9 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import axios from 'axios'
 import { useRouter } from 'next/router';
-import { userInfo } from 'os';
 import Image from 'next/image'
-import headerPortrait from '../../../public/img/user2.webp'
 import Dialog from '@mui/material/Dialog';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -27,7 +25,7 @@ const handleClose = () => {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <List sx={{ pt: 0 }}>
+      <List sx={{ pt: 0 }}>2
           <ListItem >
             <ListItemText>
               电话:xxx xxxx xxx<br/>
@@ -51,18 +49,9 @@ export default function Header() {
     setOpen(true);
   };
 
-  const DialoghandleClose = (value) => {
+  const DialoghandleClose = () => {
     setOpen(false);
   };
-
-
-    var userInfo = [] 
-    React.useEffect(()=>{
-        axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
-            userInfo = res.data.data[0]
-            setInfo(userInfo)
-        })
-    },[])
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -78,19 +67,21 @@ export default function Header() {
     };
 
     const settingClick = () => {
-        router.push('/user')
+        router.push(
+            {
+            pathname:'/user'
+        })
+        
     }
     let s = global.sessionStorage
       if(global.sessionStorage){
           c = s.length
       }
 
-    const member = () => {
-        window.scroll({
-            top: 1900,
-            behavior: "smooth"
-          });
-    }
+      React.useEffect(() => {
+          setInfo(global.sessionStorage.getItem('img'))
+      })
+      console.log(info)
     return (
         <Box className={styles.box}>
             <Box className={styles.root}>
@@ -101,7 +92,12 @@ export default function Header() {
                     <Button onClick={() => {
                         router.push('/')
                     }}>首页</Button>
-                    <Button onClick={member}>成员</Button>
+                    <Button onClick={(() =>{
+                         window.scroll({
+                            top: 1900,
+                            behavior: "smooth"
+                          });
+                    })}>成员</Button>
                     <Button onClick={(() =>{
                          window.scroll({
                             top: 700,
@@ -130,7 +126,8 @@ export default function Header() {
                     open={open}
                     onClose={DialoghandleClose}
                 />
-                {c>0?
+            </Box>
+            {c>0?
                 <Box className={styles.portrait}>
                     <Box className={styles.walls}>
                         <Button
@@ -141,24 +138,23 @@ export default function Header() {
                             style={{ width: '20%'}}
                         >
                             <Image
-                                src={headerPortrait}
+                                src={'http://192.168.31.163:3000/'+info}
                                 width={70} height={70}
                                 className={styles.makeImageCircular}
                             ></Image>  
                         </Button>                        
                     </Box>
                     <Menu
-                        anchorEl={anchorEl}
-                        keepMounted
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                    >
-                        <MenuItem onClick={settingClick}>用户设置</MenuItem>
-                        <MenuItem onClick={logout}>Logout</MenuItem>
-                    </Menu>
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={settingClick}>用户设置</MenuItem>
+                    <MenuItem onClick={logout}>Logout</MenuItem>
+                </Menu>                    
                 </Box>
-                    :''}
-            </Box>
+                :''}
         </Box>
     )
 }
