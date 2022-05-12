@@ -56,12 +56,12 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs(props) {
   const [value, setValue] = React.useState(1);
   const [info , setInfo] = React.useState({info:null})
   const [alert , setAlert] = React.useState(false);
   const router = useRouter();
-
+  console.log(props)
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -70,11 +70,7 @@ export default function VerticalTabs() {
         axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
             userInfo = res.data.data[0]
             setInfo(userInfo)
-        },[])
-        // if(global.sessionStorage.getItem('token') == null){
-        //   router.push('/login');
-        //   setAlert(true)
-        // }
+        })
     },[])
   return (
     <>
