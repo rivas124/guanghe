@@ -12,12 +12,49 @@ import { useRouter } from 'next/router';
 import { userInfo } from 'os';
 import Image from 'next/image'
 import headerPortrait from '../../../public/img/user2.webp'
+import Dialog from '@mui/material/Dialog';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+
+function SimpleDialog(props) {
+    const { onClose, selectedValue, open } = props;
+
+
+const handleClose = () => {
+    onClose(selectedValue);
+  };
+
+  return (
+    <Dialog onClose={handleClose} open={open}>
+      <List sx={{ pt: 0 }}>
+          <ListItem >
+            <ListItemText>
+              电话:xxx xxxx xxx<br/>
+              邮箱:xxxxxxxx@xxx.com
+            </ListItemText>
+            <ListItemText></ListItemText>
+          </ListItem>
+      </List>
+    </Dialog>
+  );
+}
 
 let c=0;
 export default function Header() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [info , setInfo] = React.useState(null)
     const router = useRouter();
+    const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const DialoghandleClose = (value) => {
+    setOpen(false);
+  };
+
 
     var userInfo = [] 
     React.useEffect(()=>{
@@ -85,8 +122,14 @@ export default function Header() {
                            behavior: "smooth"
                          });
                    })}>服务</Button>
-                    <Button >联系我们</Button>
+                    <Button 
+                        onClick={handleClickOpen}
+                    >联系我们</Button>
                 </ButtonGroup>
+                <SimpleDialog
+                    open={open}
+                    onClose={DialoghandleClose}
+                />
                 {c>0?
                 <Box className={styles.portrait}>
                     <Box className={styles.walls}>
