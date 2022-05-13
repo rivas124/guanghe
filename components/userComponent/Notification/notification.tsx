@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import { useRouter } from "next/router";
 
 export default function notification(
-    userInfo
+    userInfo: { userInfo: { notification1: number; notification2: number; notification3: number; }; }
 ) {
     const [notification1,setNotification1] = React.useState(userInfo.userInfo.notification1);
     const [notification2,setNotification2] = React.useState(userInfo.userInfo.notification2);

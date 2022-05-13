@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import styles from './carousel.module.scss'
 import { useRouter } from 'next/router';
 import Image from 'next/image'
-import Link from 'next/link'
 import { Carousel as ImgCarousel } from 'react-responsive-carousel';
 import loginImg2 from '../../../public/img/login/LoginPage2.jpeg'
 import loginImg1 from '../../../public/img/login/LoginPage1.jpeg'
@@ -13,7 +12,6 @@ import Alert from '@mui/material/Alert';
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
-import PropTypes from 'prop-types';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
@@ -85,7 +83,7 @@ export default function Carousel() {
                     setTimeout(() => {
                         setAlert4(false);
                       }, 3000);
-                    router.push('/');
+                    location.reload()
 
                     axios.get('http://192.168.31.163:3000/getUserInfo?tel='+919876543215).then((res) => {
                         userInfo = res.data.data[0]
@@ -116,7 +114,7 @@ export default function Carousel() {
     }
 }
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (newValue) => {
         setValue(newValue);
     };
     let s = global.sessionStorage

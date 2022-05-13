@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, {useState} from "react"
+import React from "react"
 import Network2 from "./network";
 
 class news extends React.Component {

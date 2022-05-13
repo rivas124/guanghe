@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { Box, Button } from "@mui/material";
 import styles from "./styles.module.scss";
 import { useRouter } from 'next/router';

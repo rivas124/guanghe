@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
-import Box from '@mui/material/Box';
-import styles from './footer.module.scss'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
+import Grid from '@mui/material/Grid';
 
 export default function Footer() {
     const router = useRouter();
     return (
-    <>
-        <Box className={styles.root}>
-        <ButtonGroup variant="text" aria-label="text button group" className={styles.buttongroup} color='inherit'>
+        <Grid container direction="column" justifyContent="center" alignItems="center">
+        <ButtonGroup variant="text" aria-label="text button group" color='inherit'>
                  <Button 
                     onClick={(() =>{
                          window.scroll({
@@ -29,8 +26,6 @@ export default function Footer() {
                      });
                })}>广合科技</Button>
             </ButtonGroup>
-            <p className={styles.footer}>沈阳广合科技发展有限公司版权所有©2022</p>
-        </Box>
-    </>
+        </Grid>
     )
 }

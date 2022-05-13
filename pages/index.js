@@ -2,10 +2,10 @@ import Header from '../components/LoginComponent/Header/header'
 import Carousel from "../components/LoginComponent/carousel/carousel";
 import About from '../components/about'
 import News from '../components/news'
-import Network from '../components/network'
 import Serve from '../components/serveComponent/index'
 import Team from '../components/TeamComponent/index'
 import Footer from '../components/LoginComponent/footer/footer'
+import Copyright from '../components/Copyright'
 
 function LoginPage() {
     return (
@@ -18,6 +18,7 @@ function LoginPage() {
             <Team />
             <News />
             <Footer />
+            <Copyright />
         </>
     );
 }
