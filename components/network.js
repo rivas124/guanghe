@@ -17,10 +17,10 @@ class Network2 extends React.Component {
                     <Grid xs={4.3}></Grid>
                     <Grid xs={4} p={18} style={{textAlign:'center'}}>
                         <Typography variant="h5" gutterBottom>
-                            新闻动态
+                            博客
                         </Typography>
                         <Typography variant="body3">
-                            NEWS
+                            Blog
                         </Typography>
                         <Typography color={'#82b1ff'} variant="h4">
                              —
@@ -31,19 +31,21 @@ class Network2 extends React.Component {
                         {this.props.newslist.map((newlist) => {
                             return (
                                 <Grid key={newlist.id}>
-                                    <Image src={'http://192.168.31.163:3000/'+newlist.img} width={460} height={200}></Image>
-                                    <Typography variant="body1" gutterBottom>
-                                            <a onClick={()=>{
+                                    <a onClick={()=>{
                                                 Router.push({
                                                     pathname:'/newsPage',
                                                     query:newlist
                                                 }).then((res)=>{
                                                 })
-                                            }}>{newlist.title}</a>
+                                            }} style={{cursor:'pointer'}}>
+                                    <Image src={'http://192.168.31.163:3000/'+newlist.img} width={460} height={200}></Image>
+                                    <Typography variant="body1" gutterBottom>
+                                            {newlist.title}
                                         </Typography>
                                     <Typography color={'#979797'} variant="body2" gutterBottom>
                                         {newlist.body.substring(0,32)}...
                                     </Typography>
+                                    </a>
                                 </Grid>
                             )
                         })}

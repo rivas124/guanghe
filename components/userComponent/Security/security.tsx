@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { Box, Button } from '@mui/material'
 import styles from './styles.module.scss'
-import Footer from '../bottomButton/bottomButton'
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 import Alert from '@mui/material/Alert';
 import { useRouter } from "next/router";
 
-export default function applicationsecurity(userInfo) {
+export default function applicationsecurity(userInfo: { userInfo: { Recovery: number; tel: any; }; }) {
 
     const [login, setLogin ] = React.useState("");
     const [twofactor , setTwoFactor ] = React.useState("");

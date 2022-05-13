@@ -28,7 +28,7 @@ export default function BasicGrid() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid p={15}>
+                <Grid p={8}>
                     <Image src="/../public/img/download.png" width={379} height={212}  alt={''}/>
                 </Grid>
                 <Grid container direction="row" justifyContent="space-around" alignItems="center">

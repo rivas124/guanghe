@@ -1,16 +1,14 @@
-import React, { Component, useState } from 'react'
+import React from 'react'
 import { Box, Button } from '@mui/material'
-import { useEffect } from 'react'
 import styles from './styles.module.scss'
 import axios from 'axios'
-import { compose } from '@mui/system'
 import Alert from '@mui/material/Alert';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 import { useRouter } from "next/router";
 
 export default function Account(
-    userInfo
+    userInfo: { userInfo: { tel: any; }; }
 ) {
     
     const [firstname , setFirstName] = React.useState("");
