@@ -1,30 +1,104 @@
 {
-  "name": "nextjs-with-typescript",
-  "version": "5.0.0",
+  "name": "kpi-automation",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "analyze": "BUNDLE_ANALYZE=both next build",
     "lint": "next lint",
+    "prettier-fix": "prettier --write .",
+    "find:unused": "npx next-unused",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
+  "sideEffects": false,
   "dependencies": {
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
+    "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "latest",
+    "@mui/lab": "^5.0.0-alpha.67",
     "@mui/material": "latest",
+    "@mui/styled-engine-sc": "^5.3.0",
+    "@mui/styles": "^5.7.0",
+    "@mui/system": "^5.4.0",
+    "@mui/x-data-grid": "^5.5.0",
+    "@reduxjs/toolkit": "^1.8.0",
+    "@types/date-fns": "^2.6.0",
+    "@types/lodash": "^4.14.178",
+    "@types/numeral": "^2.0.2",
+    "@types/uuid": "^8.3.4",
+    "axios": "^0.26.0",
+    "date-fns": "^2.28.0",
+    "highcharts": "^9.3.3",
+    "highcharts-react-official": "^3.1.0",
+    "lodash": "^4.17.21",
     "next": "latest",
+    "node-sass": "^4.14.1",
+    "numeral": "^2.0.6",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-hook-form": "^7.27.1",
+    "react-redux": "^7.2.6",
+    "react-responsive-carousel": "^3.2.23",
+    "react-toastify": "^8.2.0",
+    "styled-components": "^5.3.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^12.0.8",
     "@types/node": "^17.0.14",
     "@types/react": "latest",
+    "@types/react-redux": "^7.1.22",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "eslint-config-prettier": "^8.3.0",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1",
+    "sass": "^1.51.0",
     "typescript": "latest"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{md,mdx,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "next-unused": {
+    "alias": {
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
+    },
+    "debug": true,
+    "include": [
+      "components",
+      "lib",
+      "pages"
+    ],
+    "exclude": [],
+    "entrypoints": [
+      "pages"
+    ]
   }
 }

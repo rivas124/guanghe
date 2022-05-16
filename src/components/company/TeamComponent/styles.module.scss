@@ -1,0 +1,10 @@
+.imageListItemBar {
+  display: none;
+}
+.imageListItem {
+  &:hover .imageListItemBar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+  }
+}

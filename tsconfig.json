@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true,
     "baseUrl": ".",
-    "target": "es5",
+    "target": "esnext",
+    "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -9,22 +11,28 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
     "incremental": true,
+    "noImplicitAny": false,
     "paths": {
       "@lib/*": ["lib/*"],
       "@utils/*": ["utils/*"],
       "@config/*": ["config/*"],
       "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@themes/*": ["themes/*"]
+      "@components/*": ["src/components/*"],
+      "@themes/*": ["themes/*"],
+      "@coreapi": ["../../packages/core-api/src"],
+      "@coreapi/*": ["../../packages/core-api/src/*"],
+      "@api": ["../../packages/local-api/src"],
+      "@api/*": ["../../packages/local-api/src/*"],
+      "@framework": ["..\\..\\packages\\local-api\\src"],
+      "@framework/*": ["..\\..\\packages\\local-api\\src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
   "exclude": ["node_modules"]
 }

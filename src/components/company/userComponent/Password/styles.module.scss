@@ -1,0 +1,34 @@
+.pwd_root{
+    .pwd_input{
+        width: 30%;
+        height: 30px;
+        border: 1px solid #dee2e6;
+    }
+}
+.update{
+    width: 15%;
+    height: 2vw;
+}
+.cancel{
+    width: 10%;
+    height: 2vw;
+}
+.buttonBox{
+    margin: 1vw 0;
+}
+
+@media screen and (max-width:700px) {
+    .root{
+    h2{
+        font-size: 25px;
+    }
+}
+}
+
+@media screen and (max-width:700px) {
+    .root{
+    h2{
+        font-size: 25px;
+    }
+}
+}
