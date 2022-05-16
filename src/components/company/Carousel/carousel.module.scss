@@ -1,0 +1,16 @@
+.middle {
+  width: 100%;
+  color: #000;
+  position: absolute;
+  z-index: -1;
+}
+.form {
+  float: right;
+  width: 25vw;
+  text-align: center;
+  background-color: rgba($color: #fff, $alpha: 0.8);
+  border: 1px solid #888;
+  z-index: 999;
+  margin-top: 3%;
+  margin-right: 5%;
+}
