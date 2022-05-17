@@ -48,4 +48,3 @@ export const News= ({router})=>{
         </>
     )
 }
-// export default withRouter(newsPage)
