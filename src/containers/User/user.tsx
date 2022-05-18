@@ -53,7 +53,8 @@ function a11yProps(index: number) {
 
 export function User(props: any) {
   const [value, setValue] = React.useState(1);
-  const [info , setInfo] = React.useState({info:null})
+  // const [info , setInfo] = React.useState({info:null})
+  const [info, setInfo] = React.useState<any[]>([]);
   const [alert , setAlert] = React.useState(false);
   const router = useRouter();
   console.log(props)

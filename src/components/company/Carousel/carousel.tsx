@@ -10,7 +10,6 @@ import loginImg1 from "../../../../public/img/login/LoginPage1.jpeg";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
-import axios from "axios";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import Tab from "@mui/material/Tab";
@@ -346,6 +345,7 @@ export function Carousel() {
               placeholder="请输入用户名..."
               onChange={(event) => {
                 setUserlogincode(event.target.value);
+                dispatch({type:'CHANGE_USERNAME',value:event.target.value});
               }}
               required
               sx={{ width: "20vw" }}
@@ -363,6 +363,7 @@ export function Carousel() {
               placeholder="请输入密码..."
               onChange={(event) => {
                 setUserloginpwd(event.target.value);
+                dispatch({type:'CHANGE_PASSWORD',value:event.target.value});
               }}
               required
               type="password"
@@ -460,3 +461,7 @@ export function Carousel() {
     </Box>
   );
 }
+function dispatch(arg0: { type: string; value: string; }) {
+  throw new Error("Function not implemented.");
+}
+
